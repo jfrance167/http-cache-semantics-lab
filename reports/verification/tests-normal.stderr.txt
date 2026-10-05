@@ -1,0 +1,26 @@
+test_age_upper_bound (test_lab.LabTests.test_age_upper_bound) ... ok
+test_api_depth_nodes_encoded_size (test_lab.LabTests.test_api_depth_nodes_encoded_size) ... ok
+test_auth_presence_all_messages_and_names (test_lab.LabTests.test_auth_presence_all_messages_and_names) ... ok
+test_cli_status_alias_and_existing (test_lab.LabTests.test_cli_status_alias_and_existing) ... ok
+test_close_failure_cleanup (test_lab.LabTests.test_close_failure_cleanup) ... ok
+test_custom_objects_not_executed (test_lab.LabTests.test_custom_objects_not_executed) ... ok
+test_exclusive_output (test_lab.LabTests.test_exclusive_output) ... ok
+test_forbidden_capabilities (test_lab.LabTests.test_forbidden_capabilities) ... ok
+test_frozen_bytes (test_lab.LabTests.test_frozen_bytes) ... ok
+test_frozen_labels (test_lab.LabTests.test_frozen_labels) ... ok
+test_headers_and_vary_ambiguity (test_lab.LabTests.test_headers_and_vary_ambiguity) ... ok
+test_json_boundaries (test_lab.LabTests.test_json_boundaries) ... ok
+test_no_input_mutation (test_lab.LabTests.test_no_input_mutation) ... ok
+test_output_bound (test_lab.LabTests.test_output_bound) ... ok
+test_report_inert_ids (test_lab.LabTests.test_report_inert_ids) ... ok
+test_scope_reasons_and_no_early_output (test_lab.LabTests.test_scope_reasons_and_no_early_output) ... ok
+test_short_write_cleanup (test_lab.LabTests.test_short_write_cleanup) ... ok
+test_types_bounds_time (test_lab.LabTests.test_types_bounds_time) ... ok
+test_unknown_duplicate_ids_and_cases (test_lab.LabTests.test_unknown_duplicate_ids_and_cases) ... ok
+test_unsupported_still_validates_every_field (test_lab.LabTests.test_unsupported_still_validates_every_field) ... ok
+test_uri_scope_no_normalization (test_lab.LabTests.test_uri_scope_no_normalization) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.766s
+
+OK

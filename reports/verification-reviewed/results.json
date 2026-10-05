@@ -1,0 +1,168 @@
+{
+  "runtime": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "checks": [
+    {
+      "name": "tests-normal",
+      "arguments": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "tests-optimized",
+      "arguments": [
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "compile",
+      "arguments": [
+        "-m",
+        "compileall",
+        "-q",
+        "cachelab",
+        "tests",
+        "tools"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "bandit",
+      "arguments": [
+        "-m",
+        "bandit",
+        "-r",
+        "cachelab",
+        "tests",
+        "tools",
+        "-f",
+        "json"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "expiry-inclusive",
+      "arguments": [
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "name": "ignore-private",
+      "arguments": [
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "name": "ignore-vary",
+      "arguments": [
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "name": "tests-restored",
+      "arguments": [
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "demo-json",
+      "arguments": [
+        "-m",
+        "cachelab",
+        "fixtures/cases.json",
+        "--format",
+        "json",
+        "--output",
+        "C:\\Users\\Jake\\OneDrive - Alfred State College\\Documents\\New project\\http-cache-semantics-lab\\reports\\verification-reviewed\\demo.json"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "passed": true
+    },
+    {
+      "name": "demo-markdown",
+      "arguments": [
+        "-m",
+        "cachelab",
+        "fixtures/cases.json",
+        "--format",
+        "markdown",
+        "--output",
+        "C:\\Users\\Jake\\OneDrive - Alfred State College\\Documents\\New project\\http-cache-semantics-lab\\reports\\verification-reviewed\\demo.md"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "passed": true
+    }
+  ],
+  "model_restored": true,
+  "hashes": {
+    "cachelab\\contracts.py": "12c14484c3ff0558ad66d66ce30c0fe72afb160e1784f28569f8c1d6c3b97df3",
+    "cachelab\\model.py": "d55a11e69fc2215b59ff4ec51fe97b7ca129267b9b5f234d4db7fa002e88d32b",
+    "cachelab\\report.py": "de8d433b34f35df64f61c6f1d60fb440138070c86d2f78950ea0dddeb41ea107",
+    "cachelab\\__init__.py": "2eb2125d8a5d4a8d33a3ff920305fd4d310876cbcec937abf27fa275d283f694",
+    "cachelab\\__main__.py": "10accc36f6e449624dae2b960b97d68c41a4701a71d223b0c95f7edaccc1f977",
+    "tests\\test_lab.py": "67cf2837a27d469dfe3beb046d80c2e071f5cf0daaa92d56ed53fb073cf684c4",
+    "tools\\verify.py": "e5fc7de530564ed350548fc62a60a76f40f8dbcff04614dcb546fc08f758c670",
+    "fixtures\\cases.json": "c4108d862f519f543897eeb1b85e95ce31421e0daf6f1d20adca44eb25dcdf4c",
+    "fixtures\\expected.json": "37076eacc75eda2ece0503c04f48196b3844242f3efdeb903b4fb99a6e6edfd9",
+    "CONTRACT.md": "4870f15bd827313a74b6af047171fdcf99480136e3f10440f1086085ac678561"
+  },
+  "passed": true
+}

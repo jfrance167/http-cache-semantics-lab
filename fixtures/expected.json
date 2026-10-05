@@ -1,0 +1,478 @@
+[
+  {
+    "id": "fresh",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "expiry-equality",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 60,
+    "freshness_lifetime": 60,
+    "fresh": false,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "STALE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "expiry-after",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 61,
+    "freshness_lifetime": 60,
+    "fresh": false,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "STALE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "initial-age",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 60,
+    "freshness_lifetime": 60,
+    "fresh": false,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "STALE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "no-residence",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 0,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "zero-lifetime",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 0,
+    "fresh": false,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "STALE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "smax-zero",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 0,
+    "fresh": false,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "STALE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "smax-long",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 80,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "only-smax",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 80,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "no-store",
+    "status": "SUPPORTED",
+    "storage_allowed": false,
+    "request_matches": null,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "NO_STORE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "private",
+    "status": "SUPPORTED",
+    "storage_allowed": false,
+    "request_matches": null,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "PRIVATE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "both-storage",
+    "status": "SUPPORTED",
+    "storage_allowed": false,
+    "request_matches": null,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "NO_STORE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "no-cache-fresh",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "NO_CACHE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "no-cache-validator",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "CONDITIONAL_VALIDATION",
+    "reasons": [
+      "NO_CACHE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "stale-validator",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 60,
+    "freshness_lifetime": 60,
+    "fresh": false,
+    "proposed_action": "CONDITIONAL_VALIDATION",
+    "reasons": [
+      "STALE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "query-order",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": false,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "KEY_MISMATCH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "path-case",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": false,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "KEY_MISMATCH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "empty-query",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": false,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "KEY_MISMATCH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "variant-same",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "variant-different",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": false,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "VARY_MISMATCH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "variant-absent-both",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "variant-absent-empty",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": false,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "VARY_MISMATCH"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "vary-star",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": false,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "VARY_STAR"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "intent-conflict",
+    "status": "SUPPORTED",
+    "storage_allowed": true,
+    "request_matches": true,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "REUSE",
+    "reasons": [
+      "FRESH"
+    ],
+    "intent_conflict": true
+  },
+  {
+    "id": "private-intent",
+    "status": "SUPPORTED",
+    "storage_allowed": false,
+    "request_matches": null,
+    "current_age": 10,
+    "freshness_lifetime": 60,
+    "fresh": true,
+    "proposed_action": "FETCH_REQUIRED",
+    "reasons": [
+      "PRIVATE"
+    ],
+    "intent_conflict": false
+  },
+  {
+    "id": "auth-original",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_AUTH_CONTEXT"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "cookie-subsequent",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_AUTH_CONTEXT"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "set-cookie-response",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_AUTH_CONTEXT"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "other-vary",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_VARY"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "no-lifetime",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "MISSING_EXPLICIT_LIFETIME"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "percent-uri",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_URI"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "other-method",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_METHOD"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "other-status",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_RESPONSE"
+    ],
+    "intent_conflict": null
+  },
+  {
+    "id": "partial",
+    "status": "UNSUPPORTED",
+    "storage_allowed": null,
+    "request_matches": null,
+    "current_age": null,
+    "freshness_lifetime": null,
+    "fresh": null,
+    "proposed_action": "UNSUPPORTED",
+    "reasons": [
+      "UNSUPPORTED_RESPONSE"
+    ],
+    "intent_conflict": null
+  }
+]

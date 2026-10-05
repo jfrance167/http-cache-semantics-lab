@@ -1,0 +1,1111 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "fresh",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "expiry-equality",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 160,
+      "sharing_intended": true
+    },
+    {
+      "id": "expiry-after",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 161,
+      "sharing_intended": true
+    },
+    {
+      "id": "initial-age",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 50,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "no-residence",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 100,
+      "sharing_intended": true
+    },
+    {
+      "id": "zero-lifetime",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 0,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "smax-zero",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": 0
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "smax-long",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 0,
+          "s_maxage": 80
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "only-smax",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": null,
+          "s_maxage": 80
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "no-store",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": true,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "private",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": true,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "both-storage",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": true,
+          "no_cache": false,
+          "private": true,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "no-cache-fresh",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": true,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "no-cache-validator",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": true,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": true
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "stale-validator",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": true
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 160,
+      "sharing_intended": true
+    },
+    {
+      "id": "query-order",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?b=2&a=1",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "path-case",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/Item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "empty-query",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "variant-same",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "X-Variant",
+            "a"
+          ]
+        ]
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "x-variant",
+            "a"
+          ]
+        ]
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [
+          "X-Variant"
+        ],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "variant-different",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "x-variant",
+            "a"
+          ]
+        ]
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "x-variant",
+            "b"
+          ]
+        ]
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [
+          "x-variant"
+        ],
+        "strong_validator": true
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "variant-absent-both",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [
+          "x-variant"
+        ],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "variant-absent-empty",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "x-variant",
+            ""
+          ]
+        ]
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [
+          "x-variant"
+        ],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "vary-star",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [
+          "*"
+        ],
+        "strong_validator": true
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "intent-conflict",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": false
+    },
+    {
+      "id": "private-intent",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": true,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": false
+    },
+    {
+      "id": "auth-original",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "Authorization",
+            ""
+          ]
+        ]
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "cookie-subsequent",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": [
+          [
+            "Cookie",
+            ""
+          ]
+        ]
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "set-cookie-response",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [
+          [
+            "Set-Cookie",
+            ""
+          ]
+        ],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "other-vary",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [
+          "accept-language"
+        ],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "no-lifetime",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": null,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "percent-uri",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/%41",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "other-method",
+      "original": {
+        "method": "POST",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "other-status",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 304,
+        "complete": true,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    },
+    {
+      "id": "partial",
+      "original": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "subsequent": {
+        "method": "GET",
+        "uri": "https://cache.test/item?a=1&b=2",
+        "headers": []
+      },
+      "response": {
+        "status": 200,
+        "complete": false,
+        "headers": [],
+        "directives": {
+          "no_store": false,
+          "no_cache": false,
+          "private": false,
+          "max_age": 60,
+          "s_maxage": null
+        },
+        "vary": [],
+        "strong_validator": false
+      },
+      "corrected_initial_age": 0,
+      "received_at": 100,
+      "now": 110,
+      "sharing_intended": true
+    }
+  ]
+}

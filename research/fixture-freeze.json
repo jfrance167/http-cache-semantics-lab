@@ -1,0 +1,14 @@
+[
+  {
+    "Path": "C:\\Users\\Jake\\OneDrive - Alfred State College\\Documents\\New project\\http-cache-semantics-lab\\fixtures\\cases.json",
+    "Hash": "C4108D862F519F543897EEB1B85E95CE31421E0DAF6F1D20ADCA44EB25DCDF4C"
+  },
+  {
+    "Path": "C:\\Users\\Jake\\OneDrive - Alfred State College\\Documents\\New project\\http-cache-semantics-lab\\fixtures\\expected.json",
+    "Hash": "37076EACC75EDA2ECE0503C04F48196B3844242F3EFDEB903B4FB99A6E6EDFD9"
+  },
+  {
+    "Path": "C:\\Users\\Jake\\OneDrive - Alfred State College\\Documents\\New project\\http-cache-semantics-lab\\CONTRACT.md",
+    "Hash": "4870F15BD827313A74B6AF047171FDCF99480136E3F10440F1086085AC678561"
+  }
+]
